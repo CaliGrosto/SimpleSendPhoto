@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.Config.PhotoPath;
+import com.example.Config.config;
 import net.mamoe.mirai.console.plugin.jvm.JavaPlugin;
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescriptionBuilder;
 
@@ -16,7 +16,7 @@ public final class SimpleSendPhoto extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        reloadPluginConfig(PhotoPath.INSTANCE);
+        reloadPluginConfig(config.INSTANCE);
         new Listener().GroupPicture();
         getLogger().info("Plugin loaded!");
     }

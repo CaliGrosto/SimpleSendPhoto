@@ -1,6 +1,6 @@
 package com.example.Util;
 
-import com.example.Config.PhotoPath;
+import com.example.Config.config;
 
 import java.io.File;
 
@@ -8,7 +8,7 @@ public class GetRandomPhotos {
 
     public static String getPhotoName() {//随机获取文件夹内图片路径
 
-        String picturePath = PhotoPath.INSTANCE.getPicturePath();//文件夹路径
+        String picturePath = config.INSTANCE.getPicturePath();//文件夹路径
 
         File file = new File(picturePath);
         File[] array = file.listFiles();
