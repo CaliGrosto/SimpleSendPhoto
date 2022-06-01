@@ -6,7 +6,7 @@
 
 第一次使用请先修改配置文件
 ```
-配置文件：
+配置文件：config.yml
 
 PicturePath: ''     #文件夹路径
 Trigger: ''         #触发语句
