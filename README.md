@@ -10,6 +10,7 @@
 
 PicturePath: ''     #文件夹路径
 Trigger: ''         #触发语句
+SavePicture: 'data/Picture/SavePicture.jpg'     #默认不要修改
 ```
 
   在群聊中发送   
