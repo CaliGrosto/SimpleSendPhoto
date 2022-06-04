@@ -1,6 +1,8 @@
 package com.example;
 
+import com.example.Command.KeywordCommand;
 import com.example.Config.config;
+import net.mamoe.mirai.console.command.CommandManager;
 import net.mamoe.mirai.console.plugin.jvm.JavaPlugin;
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescriptionBuilder;
 
@@ -18,6 +20,7 @@ public final class SimpleSendPhoto extends JavaPlugin {
     public void onEnable() {
         reloadPluginConfig(config.INSTANCE);
         new Listener().GroupPicture();
+        CommandManager.INSTANCE.registerCommand(KeywordCommand.INSTANCE, false);
         getLogger().info("Plugin loaded!");
     }
 }

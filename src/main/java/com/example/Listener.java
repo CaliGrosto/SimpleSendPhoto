@@ -10,7 +10,7 @@ import net.mamoe.mirai.utils.ExternalResource;
 import java.io.File;
 
 public class Listener {
-    public void GroupPicture(){
+    public void GroupPicture() {
         GlobalEventChannel.INSTANCE.subscribeAlways(GroupMessageEvent.class, event -> {
             String trigger = config.INSTANCE.getTrigger();
             String content = event.getMessage().contentToString();
