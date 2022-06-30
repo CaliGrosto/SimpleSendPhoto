@@ -41,7 +41,7 @@ public class Listener {
             String trigger3 = config.INSTANCE.getTrigger3();
             String content3 = event.getMessage().contentToString();
 
-            if (content3.contains(trigger3)) {//发送随机图库文件2
+            if (content3.contains(trigger3)) {//发送随机图库文件3
                 String filename3 = GetRandomPhotos.getPhotoName();
                 Image image3 = ExternalResource.uploadAsImage(new File(filename3), event.getSubject());
                 event.getSubject().sendMessage(image3);
