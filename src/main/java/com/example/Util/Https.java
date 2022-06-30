@@ -81,7 +81,6 @@ public class Https {
         SaveJson bean = new Gson().fromJson(s, SaveJson.class);
         return bean;
     }
-
 }
 
 

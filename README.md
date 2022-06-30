@@ -5,11 +5,14 @@
 #### 可在配置文件中修改图片路径以及触发语句
 
 第一次使用请先修改配置文件  
-配置文件：config.yml
+初次运行会生成配置文件：config/com.example.SimpleSendPhoto/config.yml
 ```
-
-PicturePath: ''     #文件夹路径
-Trigger: ''         #触发语句
+PicturePath: ''      #存放图片文件夹路径
+Trigger: ''          #触发语句
+PicturePath2: ''     #存放图片文件夹路径2
+Trigger2: ''         #触发语句2
+PicturePath3: ''     #存放图片文件夹路径3
+Trigger3: ''         #触发语句3
 SavePicture: 'data/Picture/SavePicture.jpg'     #默认不要修改
 ```
 
