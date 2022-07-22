@@ -16,9 +16,10 @@ public class Listener {
         GlobalEventChannel.INSTANCE.subscribeAlways(GroupMessageEvent.class, event -> {
             String trigger = config.INSTANCE.getTrigger();
             String content = event.getMessage().contentToString();
+            String path = config.INSTANCE.getPicturePath();
 
             if (content.contains(trigger)) {//发送随机图库文件
-                String filename = GetRandomPhotos.getPhotoName();//取随机图片
+                String filename = GetRandomPhotos.getPhotoName(path);//取随机图片
                 Image image = ExternalResource.uploadAsImage(new File(filename), event.getSubject());//返回一个图片对象image
                 event.getSubject().sendMessage(image);//发送图片
             }
@@ -28,9 +29,10 @@ public class Listener {
         GlobalEventChannel.INSTANCE.subscribeAlways(GroupMessageEvent.class,event->{
            String trigger2 = config.INSTANCE.getTrigger2();
            String content2 = event.getMessage().contentToString();
+           String path2 = config.INSTANCE.getPicturePath2();
 
            if (content2.contains(trigger2)){//发送随机图库文件2
-               String filename2 = GetRandomPhotos.getPhotoName();
+               String filename2 = GetRandomPhotos.getPhotoName(path2);
                Image image2 = ExternalResource.uploadAsImage(new File(filename2), event.getSubject());
                event.getSubject().sendMessage(image2);
            }
@@ -40,9 +42,10 @@ public class Listener {
         GlobalEventChannel.INSTANCE.subscribeAlways(GroupMessageEvent.class, event -> {
             String trigger3 = config.INSTANCE.getTrigger3();
             String content3 = event.getMessage().contentToString();
+            String path3 = config.INSTANCE.getPicturePath3();
 
-            if (content3.contains(trigger3)) {//发送随机图库文件3
-                String filename3 = GetRandomPhotos.getPhotoName();
+            if (content3.contains(trigger3)) {//发送随机图库文件2
+                String filename3 = GetRandomPhotos.getPhotoName(path3);
                 Image image3 = ExternalResource.uploadAsImage(new File(filename3), event.getSubject());
                 event.getSubject().sendMessage(image3);
             }

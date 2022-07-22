@@ -20,6 +20,8 @@ public final class SimpleSendPhoto extends JavaPlugin {
     public void onEnable() {
         reloadPluginConfig(config.INSTANCE);
         new Listener().GroupPicture();
+        new Listener().GroupPicture2();
+        new Listener().GroupPicture3();
         CommandManager.INSTANCE.registerCommand(KeywordCommand.INSTANCE, false);
         getLogger().info("SimpleSendPhoto loaded!");
     }
