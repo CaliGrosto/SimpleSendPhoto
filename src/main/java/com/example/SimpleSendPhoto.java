@@ -1,10 +1,13 @@
 package com.example;
 
 import com.example.Command.KeywordCommand;
+import com.example.Command.UploadPictures;
 import com.example.Config.config;
 import net.mamoe.mirai.console.command.CommandManager;
 import net.mamoe.mirai.console.plugin.jvm.JavaPlugin;
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescriptionBuilder;
+
+import java.util.List;
 
 public final class SimpleSendPhoto extends JavaPlugin {
     public static final SimpleSendPhoto INSTANCE = new SimpleSendPhoto();
@@ -19,10 +22,9 @@ public final class SimpleSendPhoto extends JavaPlugin {
     @Override
     public void onEnable() {
         reloadPluginConfig(config.INSTANCE);
-        new Listener().GroupPicture();
-        new Listener().GroupPicture2();
-        new Listener().GroupPicture3();
+        Listener.AllStart();
         CommandManager.INSTANCE.registerCommand(KeywordCommand.INSTANCE, false);
+        CommandManager.INSTANCE.registerCommand(UploadPictures.INSTANCE,false);
         getLogger().info("SimpleSendPhoto loaded!");
     }
 }

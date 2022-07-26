@@ -51,4 +51,24 @@ public class Listener {
             }
         });
     }
+    public void GroupPicture4() {
+        GlobalEventChannel.INSTANCE.subscribeAlways(GroupMessageEvent.class, event -> {
+            String trigger4 = config.INSTANCE.getTrigger4();
+            String content4 = event.getMessage().contentToString();
+            String path4 = config.INSTANCE.getPicturePath4();
+
+            if (content4.contains(trigger4)) {//发送随机图库文件2
+                String filename4 = GetRandomPhotos.getPhotoName(path4);
+                Image image4 = ExternalResource.uploadAsImage(new File(filename4), event.getSubject());
+                event.getSubject().sendMessage(image4);
+            }
+        });
+    }
+    public static void AllStart(){
+        Listener listener = new Listener();
+        listener.GroupPicture();
+        listener.GroupPicture2();
+        listener.GroupPicture3();
+        listener.GroupPicture4();
+    }
 }

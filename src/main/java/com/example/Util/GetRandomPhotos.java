@@ -3,6 +3,7 @@ package com.example.Util;
 import com.example.Config.config;
 
 import java.io.File;
+import java.util.Random;
 
 public class GetRandomPhotos {
 
@@ -13,9 +14,11 @@ public class GetRandomPhotos {
         File file = new File(PicturePath);
         File[] array = file.listFiles();
         int NumberOfPhotos = array.length;//有多少个文件
-        double RandomPhotos = Math.random() * (NumberOfPhotos - 1);
-        //System.out.println(array[(int)RandomPhotos]);
-        String randomName = String.valueOf(array[(int) RandomPhotos]);
+
+        Random random = new Random();
+        int RandomPhotos = random.nextInt(0, NumberOfPhotos);//[0,NumberOfPhotos)
+
+        String randomName = String.valueOf(array[RandomPhotos]);
         return randomName;
     }
 

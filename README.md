@@ -13,6 +13,11 @@ PicturePath2: ''     #存放图片文件夹路径2
 Trigger2: ''         #触发语句2
 PicturePath3: ''     #存放图片文件夹路径3
 Trigger3: ''         #触发语句3
+
+Trigger4: ''         #随机发送群内添加的图片触发词
+PicturePath4: ''     #群内添加图片路径
+#用法：/添加图片 （图片名称） （图片）
+
 SavePicture: 'data/Picture/SavePicture.jpg'     #默认不要修改
 ```
 

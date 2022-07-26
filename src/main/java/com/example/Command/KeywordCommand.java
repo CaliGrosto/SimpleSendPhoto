@@ -9,7 +9,7 @@ import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.message.data.MessageChainBuilder;
 
 
-public class KeywordCommand extends JSimpleCommand {
+public final class KeywordCommand extends JSimpleCommand {
     public static final KeywordCommand INSTANCE = new KeywordCommand();
     private KeywordCommand() {
         super(SimpleSendPhoto.INSTANCE, "来点");
