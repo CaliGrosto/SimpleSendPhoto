@@ -18,7 +18,7 @@ Trigger4: ''         #随机发送群内添加的图片触发词
 PicturePath4: ''     #群内添加图片路径
 #用法：/添加图片 （图片名称） （图片）
 
-SavePicture: 'data/Picture/SavePicture.jpg'     #默认不要修改
+SavePicture: 'data/Picture/SavePicture.jpg'     #默认不要修改(这是存放lolicon api获取到的图片的文件路径)
 ```
 
   在群聊中发送   
