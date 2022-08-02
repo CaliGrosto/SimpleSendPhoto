@@ -22,6 +22,9 @@ SavePicture: 'data/Picture/SavePicture.jpg'     #默认不要修改(这是存放
 
 ```
 
+
+
+
   在群聊中发送   
 "来点 XX涩图"   
 就可以获得相应图片的标题作者和图片链接(通过loliconapi获取)
