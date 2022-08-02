@@ -24,6 +24,8 @@ SavePicture: 'data/Picture/SavePicture.jpg'     #默认不要修改(这是存放
 
 
 
+（该功能需要插件chat-command支持）
+[chat-command](https://github.com/project-mirai/chat-command)
 
   在群聊中发送   
 "来点 XX涩图"   
