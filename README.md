@@ -25,3 +25,12 @@ SavePicture: 'data/Picture/SavePicture.jpg'     #默认不要修改(这是存放
   在群聊中发送   
 "来点 XX涩图"   
 就可以获得相应图片的标题作者和图片链接(通过loliconapi获取)
+默认是没有权限的（除bot主人外）
+下面附上Mirai权限管理相关指令：
+```
+/permission cancel <被许可人 ID> <权限 ID>   取消授权一个权限
+/permission cancelall <被许可人 ID> <权限 ID>   取消授权一个权限及其所有子权限
+/permission listpermissions    查看所有权限列表
+/permission permit <被许可人 ID> <权限 ID>   授权一个权限
+/permission permittedpermissions <被许可人 ID>   查看被授权权限列表
+```

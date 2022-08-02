@@ -5,6 +5,7 @@ import net.mamoe.mirai.console.data.ValueDescription
 import net.mamoe.mirai.console.data.value
 
 object config : AutoSavePluginConfig("config"){
+    @ValueDescription("PicturePath1,2,3,4依次为图库1,2,3,4对应的触发词(Trigger)")
     var PicturePath : String by value("请修改")
     var Trigger : String by value("请修改")
     var PicturePath2 : String by value("请修改")

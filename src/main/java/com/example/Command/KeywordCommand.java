@@ -1,13 +1,11 @@
 package com.example.Command;
 
-import com.example.Config.WhiteList;
 import com.example.Config.config;
 import com.example.SimpleSendPhoto;
 import com.example.Util.Https;
 import com.example.Util.SaveJson;
 import net.mamoe.mirai.console.command.CommandSender;
 import net.mamoe.mirai.console.command.java.JSimpleCommand;
-import net.mamoe.mirai.contact.Group;
 import net.mamoe.mirai.message.data.Image;
 import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.message.data.MessageChainBuilder;
