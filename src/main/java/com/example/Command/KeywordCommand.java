@@ -1,12 +1,19 @@
 package com.example.Command;
 
+import com.example.Config.WhiteList;
+import com.example.Config.config;
 import com.example.SimpleSendPhoto;
 import com.example.Util.Https;
 import com.example.Util.SaveJson;
 import net.mamoe.mirai.console.command.CommandSender;
 import net.mamoe.mirai.console.command.java.JSimpleCommand;
+import net.mamoe.mirai.contact.Group;
+import net.mamoe.mirai.message.data.Image;
 import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.message.data.MessageChainBuilder;
+import net.mamoe.mirai.utils.ExternalResource;
+
+import java.io.File;
 
 
 public final class KeywordCommand extends JSimpleCommand {
@@ -30,15 +37,16 @@ public final class KeywordCommand extends JSimpleCommand {
         String title = dataDTO.getTitle();
 
 
-        //Https.downloadFile(s);//下载图片
-        //String savePicture = config.INSTANCE.getSavePicture();//
-        //Image image = ExternalResource.uploadAsImage(new File(savePicture), sender.getSubject());//返回一个图片对象image
+        Https.downloadFile(Urls);//下载图片
+        String savePicture = config.INSTANCE.getSavePicture();//
+        Image image = ExternalResource.uploadAsImage(new File(savePicture), sender.getSubject());//返回一个图片对象image
 
         MessageChain singleMessages = new MessageChainBuilder()
                 //.append(image + "\n")
                 .append("标题："+title+"\n")
                 .append("作者："+author+"\n")
                 .append("图片链接："+Urls)
+                .append(image)
                 .build();
         sender.sendMessage(singleMessages);
 

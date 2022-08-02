@@ -35,4 +35,13 @@ public class savePictures {
         outStream.write(data);
         outStream.close();
     }
+
+    public static boolean FileExists(String FilePath){//文件是否存在
+        File file = new File(FilePath);
+        if (file.exists()){
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

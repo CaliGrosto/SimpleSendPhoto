@@ -25,6 +25,14 @@ public class Https {
             byte[] data = readInputStream(is);
             //创建一个文件对象用来保存图片，默认保存当前工程根目录，默认为data/Picture/SavePicture.jpg
             String savePicture = config.INSTANCE.getSavePicture();
+
+            //如果文件夹不存在则自动创建一个文件夹
+            boolean b = savePictures.FileExists(savePicture);
+            if (!b) {
+                File file = new File(savePicture);
+                file.mkdirs();
+            }
+
             File imageFile = new File(savePicture);
             FileOutputStream outStream = new FileOutputStream(imageFile);
             outStream.write(data);
