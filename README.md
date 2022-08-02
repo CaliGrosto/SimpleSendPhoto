@@ -1,8 +1,10 @@
 # SimpleSendPhoto
 
 ## 一个简单的自定义随机发图插件(Mirai)
+## JDK需求：jdk17
 ### 每在群中检测到一次触发语句，就会随机从图库文件夹中抽取一张图片发送回QQ群中
 #### 可在配置文件中修改图片路径以及触发语句
+
 
 第一次使用请先修改配置文件  
 初次运行会生成配置文件：config/com.example.SimpleSendPhoto/config.yml
