@@ -1,13 +1,12 @@
 package com.example.Util;
 
-import com.example.Config.config;
 
 import java.io.File;
 import java.util.Random;
 
 public class GetRandomPhotos {
-
-    public static String getPhotoName(String PicturePath) {//随机获取文件夹内图片路径
+    //随机获取文件夹内图片路径
+    public static String getPhotoName(String PicturePath) {
 
         //String picturePath = config.INSTANCE.getPicturePath();//文件夹路径
 
@@ -20,6 +19,24 @@ public class GetRandomPhotos {
 
         String randomName = String.valueOf(array[RandomPhotos]);
         return randomName;
+    }
+
+    //随机获取有范围限制的图片路径
+    public static String getRangePicture(int head,int last,String PicturePath){
+        File file = new File(PicturePath);
+        File[] array = file.listFiles();
+        int NumberOfPhotos = array.length;//有多少个文件
+        if (NumberOfPhotos < last){
+            return "no";
+        }else {
+            Random random = new Random();
+            int RandomPhotos = random.nextInt(head-1, last);
+
+            String randomName = String.valueOf(array[RandomPhotos]);
+            StringBuilder stringBuilder = new StringBuilder();
+
+            return randomName;
+        }
     }
 
 //    @Test

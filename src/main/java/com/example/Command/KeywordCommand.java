@@ -40,7 +40,17 @@ public final class KeywordCommand extends JSimpleCommand {
 
 
             Https.downloadFile(Urls);//下载图片
-            String savePicture = config.INSTANCE.getSavePicture();//
+            //判断系统是Windows还是Linux
+            String os = System.getProperty("os.name");
+            char c = os.charAt(0);
+            String t = String.valueOf(c);
+            boolean w = t.equals("W");
+            String savePicture;
+            if (w){
+                savePicture = config.INSTANCE.getWindowsSavePicture();
+            }else {
+                savePicture = config.INSTANCE.getLinuxSavePicture();
+            }
             Image image = ExternalResource.uploadAsImage(new File(savePicture), sender.getSubject());//返回一个图片对象image
 
             MessageChain singleMessages = new MessageChainBuilder()

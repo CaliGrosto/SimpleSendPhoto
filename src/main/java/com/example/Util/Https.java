@@ -24,12 +24,23 @@ public class Https {
             InputStream is = conn.getInputStream();
             byte[] data = readInputStream(is);
             //创建一个文件对象用来保存图片，默认保存当前工程根目录，默认为data/Picture/SavePicture.jpg
-            String savePicture = config.INSTANCE.getSavePicture();
+            //判断系统是Windows还是Linux
+            String os = System.getProperty("os.name");
+            char c = os.charAt(0);
+            String t = String.valueOf(c);
+            boolean w = t.equals("W");
+            String savePicture;
+            if (w){
+                savePicture = config.INSTANCE.getWindowsSavePicture();
+            }else {
+                savePicture = config.INSTANCE.getLinuxSavePicture();
+            }
 
+            String substring = savePicture.substring(0,12);
             //如果文件夹不存在则自动创建一个文件夹
-            boolean b = savePictures.FileExists(savePicture);
+            boolean b = savePictures.FileExists(substring);
             if (!b) {
-                File file = new File(savePicture);
+                File file = new File(substring);
                 file.mkdirs();
             }
 
