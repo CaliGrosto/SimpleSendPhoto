@@ -22,4 +22,6 @@ object config : AutoSavePluginConfig("config"){
     @ValueDescription("图片缓存路径，默认不要修改")
     var LinuxSavePicture : String by value("data/Picture/SavePicture.jpg")
     var WindowsSavePicture : String by value("data\\picture\\SavePicture.jpg")
+    @ValueDescription("关键词搜图是否开启R18（0为关闭，1为开启，2为混合模式）")
+    var R18 : String by value("0")
 }

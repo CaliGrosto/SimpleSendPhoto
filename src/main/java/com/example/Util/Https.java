@@ -62,7 +62,8 @@ public class Https {
     }
     public static String GetJson(String Keyword) {//获取Json
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("https://api.lolicon.app/setu/v2?tag=" + Keyword);
+        String r18 = config.INSTANCE.getR18();
+        HttpGet httpGet = new HttpGet("https://api.lolicon.app/setu/v2?tag=" + Keyword + "&r18=" + r18);
         CloseableHttpResponse execute = null;
         try {
             execute = httpClient.execute(httpGet);

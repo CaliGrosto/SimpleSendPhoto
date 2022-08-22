@@ -14,9 +14,9 @@ import net.mamoe.mirai.utils.ExternalResource;
 import java.io.File;
 
 
-public final class KeywordCommand extends JSimpleCommand {
-    public static final KeywordCommand INSTANCE = new KeywordCommand();
-    private KeywordCommand() {
+public final class SeTuCommand extends JSimpleCommand {
+    public static final SeTuCommand INSTANCE = new SeTuCommand();
+    private SeTuCommand() {
         super(SimpleSendPhoto.INSTANCE, "来点");
         // 可选设置如下属性
         setDescription("搜索图片");

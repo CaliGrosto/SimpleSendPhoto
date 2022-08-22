@@ -1,7 +1,7 @@
 package com.example;
 
-import com.example.Command.KeywordCommand;
 import com.example.Command.LotteryCommand;
+import com.example.Command.SeTuCommand;
 import com.example.Command.UploadPictures;
 import com.example.Config.config;
 import net.mamoe.mirai.console.command.CommandManager;
@@ -24,7 +24,7 @@ public final class SimpleSendPhoto extends JavaPlugin {
     public void onEnable() {
         reloadPluginConfig(config.INSTANCE);
         Listener.AllStart();
-        CommandManager.INSTANCE.registerCommand(KeywordCommand.INSTANCE, false);
+        CommandManager.INSTANCE.registerCommand(SeTuCommand.INSTANCE, false);
         CommandManager.INSTANCE.registerCommand(UploadPictures.INSTANCE,false);
         CommandManager.INSTANCE.registerCommand(LotteryCommand.INSTANCE,false);
         getLogger().info("SimpleSendPhoto loaded!");
