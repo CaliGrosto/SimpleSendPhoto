@@ -36,7 +36,7 @@ public class savePictures {
         outStream.close();
     }
 
-    public static boolean FileExists(String FilePath){//文件是否存在
+    public static boolean FileExists(String FilePath){//文件是否存在，若不存在则创建文件
         File file = new File(FilePath);
         if (file.exists()){
             return true;

@@ -33,7 +33,7 @@ public final class LotteryCommand extends JSimpleCommand {
         }else{
             StringBuilder stringBuilder = new StringBuilder();
             Random random = new Random();
-            int pc = random.nextInt(head, last+1);
+            int pc = random.nextInt(last+1-head+1)+head;
             String pcs = String.valueOf(pc);
 
             StringBuilder append = stringBuilder.append(rangePicturePath)

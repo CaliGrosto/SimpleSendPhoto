@@ -15,7 +15,7 @@ public class GetRandomPhotos {
         int NumberOfPhotos = array.length;//有多少个文件
 
         Random random = new Random();
-        int RandomPhotos = random.nextInt(0, NumberOfPhotos);//[0,NumberOfPhotos)
+        int RandomPhotos = random.nextInt(NumberOfPhotos);//[0,NumberOfPhotos)
 
         String randomName = String.valueOf(array[RandomPhotos]);
         return randomName;
@@ -30,7 +30,7 @@ public class GetRandomPhotos {
             return "no";
         }else {
             Random random = new Random();
-            int RandomPhotos = random.nextInt(head-1, last);
+            int RandomPhotos = random.nextInt(last-(head-1)+1)+(head-1);
 
             String randomName = String.valueOf(array[RandomPhotos]);
             StringBuilder stringBuilder = new StringBuilder();
