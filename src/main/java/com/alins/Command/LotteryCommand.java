@@ -1,8 +1,7 @@
-package com.example.Command;
+package com.alins.Command;
 
-import com.example.Config.config;
-import com.example.SimpleSendPhoto;
-import com.example.Util.GetRandomPhotos;
+import com.alins.Config.config;
+import com.alins.SimpleSendPhoto;
 import net.mamoe.mirai.console.command.CommandSender;
 import net.mamoe.mirai.console.command.java.JSimpleCommand;
 import net.mamoe.mirai.message.data.Image;

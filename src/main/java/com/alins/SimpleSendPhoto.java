@@ -1,20 +1,18 @@
-package com.example;
+package com.alins;
 
-import com.example.Command.LotteryCommand;
-import com.example.Command.SeTuCommand;
-import com.example.Command.UploadPictures;
-import com.example.Config.config;
+import com.alins.Command.LotteryCommand;
+import com.alins.Command.SeTuCommand;
+import com.alins.Command.UploadPictures;
+import com.alins.Config.config;
 import net.mamoe.mirai.console.command.CommandManager;
 import net.mamoe.mirai.console.plugin.jvm.JavaPlugin;
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescriptionBuilder;
-
-import java.util.List;
 
 public final class SimpleSendPhoto extends JavaPlugin {
     public static final SimpleSendPhoto INSTANCE = new SimpleSendPhoto();
 
     private SimpleSendPhoto() {
-        super(new JvmPluginDescriptionBuilder("com.example.SimpleSendPhoto", "1.0")
+        super(new JvmPluginDescriptionBuilder("com.alins.SimpleSendPhoto", "2.0")
                 .name("SimpleSendPhoto")
                 .author("Alin")
                 .build());
@@ -27,6 +25,6 @@ public final class SimpleSendPhoto extends JavaPlugin {
         CommandManager.INSTANCE.registerCommand(SeTuCommand.INSTANCE, false);
         CommandManager.INSTANCE.registerCommand(UploadPictures.INSTANCE,false);
         CommandManager.INSTANCE.registerCommand(LotteryCommand.INSTANCE,false);
-        getLogger().info("SimpleSendPhoto loaded!");
+        getLogger().info("SimpleSendPhotos插件加载完毕！");
     }
 }

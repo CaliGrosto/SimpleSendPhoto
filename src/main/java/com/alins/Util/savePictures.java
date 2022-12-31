@@ -1,13 +1,13 @@
-package com.example.Util;
+package com.alins.Util;
 
-import com.example.Config.config;
+import com.alins.Config.config;
 import net.mamoe.mirai.message.data.Image;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import static com.example.Util.Https.readInputStream;
+import static com.alins.Util.Https.readInputStream;
 
 public class savePictures {
     public static void SavePicture(Image image,String name) throws Exception {

@@ -1,6 +1,6 @@
-package com.example.Util;
+package com.alins.Util;
 
-import com.example.Config.config;
+import com.alins.Config.config;
 import com.google.gson.Gson;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;

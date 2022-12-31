@@ -7,7 +7,7 @@
 
 
 第一次使用请先修改配置文件  
-初次运行会生成配置文件：config/com.example.SimpleSendPhoto/config.yml
+初次运行会生成配置文件：config/com.alins.SimpleSendPhoto/config.yml
 ```
 PicturePath: ''      #存放图片文件夹路径
 Trigger: ''          #触发语句

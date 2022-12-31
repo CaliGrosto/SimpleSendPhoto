@@ -1,6 +1,4 @@
-package com.example.Util;
-
-import com.example.Config.config;
+package com.alins.Util;
 
 public class GetConfig {
     public static String GetPicturePath(String picturePath){//修正路径格式

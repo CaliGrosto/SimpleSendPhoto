@@ -1,16 +1,14 @@
-package com.example;
+package com.alins;
 
-import com.example.Config.config;
-import com.example.Util.GetConfig;
-import com.example.Util.GetRandomPhotos;
+import com.alins.Config.config;
+import com.alins.Util.GetConfig;
+import com.alins.Util.GetRandomPhotos;
 import net.mamoe.mirai.event.GlobalEventChannel;
 import net.mamoe.mirai.event.events.GroupMessageEvent;
 import net.mamoe.mirai.message.data.Image;
 import net.mamoe.mirai.utils.ExternalResource;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Listener {
     public void GroupPicture() {
