@@ -4,6 +4,7 @@ import com.alins.Command.LotteryCommand;
 import com.alins.Command.SeTuCommand;
 import com.alins.Command.UploadPictures;
 import com.alins.Config.config;
+import com.alins.Util.Listener;
 import net.mamoe.mirai.console.command.CommandManager;
 import net.mamoe.mirai.console.plugin.jvm.JavaPlugin;
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescriptionBuilder;

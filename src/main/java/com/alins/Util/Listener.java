@@ -1,8 +1,6 @@
-package com.alins;
+package com.alins.Util;
 
 import com.alins.Config.config;
-import com.alins.Util.GetConfig;
-import com.alins.Util.GetRandomPhotos;
 import net.mamoe.mirai.event.GlobalEventChannel;
 import net.mamoe.mirai.event.events.GroupMessageEvent;
 import net.mamoe.mirai.message.data.Image;
