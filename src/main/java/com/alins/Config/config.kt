@@ -20,8 +20,8 @@ object config : AutoSavePluginConfig("config"){
     @ValueDescription("存放群内通过指令添加的图片路径")
     var PicturePath4 : String by value("请修改")//群内添加
     @ValueDescription("图片缓存路径，默认不要修改")
-    var LinuxSavePicture : String by value("data/com.alins.SimpleSendPhoto/SavePicture.jpg")
-    var WindowsSavePicture : String by value("data\\com.alins.SimpleSendPhoto\\picture\\SavePicture.jpg")
+    var LinuxSavePicture : String by value("data/sspPic/SavePicture.jpg")
+    var WindowsSavePicture : String by value("data\\SSPpic\\SavePicture.jpg")
     @ValueDescription("0为不开启r18模式，1为只开启r18模式，2为混合模式")
     var r18 :String by value("0")
 }
