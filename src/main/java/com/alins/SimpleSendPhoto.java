@@ -4,10 +4,11 @@ import com.alins.Command.LotteryCommand;
 import com.alins.Command.SeTuCommand;
 import com.alins.Command.UploadPictures;
 import com.alins.Config.config;
-import com.alins.Util.Listener;
+import com.alins.Util.GroupEventListener;
 import net.mamoe.mirai.console.command.CommandManager;
 import net.mamoe.mirai.console.plugin.jvm.JavaPlugin;
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescriptionBuilder;
+import net.mamoe.mirai.event.GlobalEventChannel;
 
 public final class SimpleSendPhoto extends JavaPlugin {
     public static final SimpleSendPhoto INSTANCE = new SimpleSendPhoto();
@@ -22,10 +23,14 @@ public final class SimpleSendPhoto extends JavaPlugin {
     @Override
     public void onEnable() {
         reloadPluginConfig(config.INSTANCE);
-        Listener.AllStart();
         CommandManager.INSTANCE.registerCommand(SeTuCommand.INSTANCE, false);
         CommandManager.INSTANCE.registerCommand(UploadPictures.INSTANCE,false);
         CommandManager.INSTANCE.registerCommand(LotteryCommand.INSTANCE,false);
+
+        //群事件监听
+        GlobalEventChannel.INSTANCE.registerListenerHost(new GroupEventListener());
+
+
         getLogger().info("SimpleSendPhotos插件加载完毕！");
     }
 }
