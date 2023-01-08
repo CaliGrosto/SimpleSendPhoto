@@ -7,7 +7,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import static com.alins.Util.Https.readInputStream;
+import static com.alins.Util.HttpsUtil.readInputStream;
 
 public class savePictures {
     public static void SavePicture(Image image,String name) throws Exception {

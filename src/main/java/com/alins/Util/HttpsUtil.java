@@ -1,6 +1,7 @@
 package com.alins.Util;
 
 import com.alins.Config.config;
+import com.alins.JsonHandle.SaveJson;
 import com.google.gson.Gson;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -12,7 +13,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Https {
+public class HttpsUtil {
     public static void downloadFile(String URL) throws  Exception {
             URL url = new URL(URL);
             //打开连接
@@ -90,14 +91,14 @@ public class Https {
     }
 
     public static String GetPictureURL(String KeyWord) {//获取照片的URL
-        String s = Https.GetJson(KeyWord);
+        String s = HttpsUtil.GetJson(KeyWord);
         SaveJson saveJson = new Gson().fromJson(s, SaveJson.class);
         String urls = saveJson.getData().get(0).getUrls().getOriginal();
         return urls;
     }
 
     public static SaveJson GetJavaBean(String KeyWord){//获取SaveJson对象
-        String s = Https.GetJson(KeyWord);
+        String s = HttpsUtil.GetJson(KeyWord);
         SaveJson bean = new Gson().fromJson(s, SaveJson.class);
         return bean;
     }

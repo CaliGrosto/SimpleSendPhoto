@@ -9,18 +9,23 @@
 第一次使用请先修改配置文件  
 初次运行会生成配置文件：config/com.alins.SimpleSendPhoto/config.yml
 ```
-PicturePath: ''      #存放图片文件夹路径（此处必须加上单引号）
-Trigger: ''          #触发语句（此处不用添加单引号）
-PicturePath2: ''     #存放图片文件夹路径2
-Trigger2: ''         #触发语句2
-PicturePath3: ''     #存放图片文件夹路径3
-Trigger3: ''         #触发语句3
-
-Trigger4: ''         #随机发送群内添加的图片触发词
-PicturePath4: ''     #在群内使用添加指令添加的图片存放路径
-#用法：/添加图片 （图片名称） （图片）
-
-SavePicture: 'data/Picture/SavePicture.jpg'     #默认不要修改(这是存放lolicon api获取到的图片的文件路径)
+PicturePath: （路径必须带上单引号）
+  - 'C:\Users\90899\Desktop\pictest'    图库1
+  - 'C:\Users\90899\Desktop\pictest'    图库2（如若需要更多图库以及触发词可以照此格式自行添加）
+Trigger: 
+  - 测试1                               触发词1
+  - 测试2                               触发词2（如若需要更多图库以及触发词可以照此格式自行添加）
+# 可控范围图库路径
+RangePicturePath: 请修改
+# 可控范围图库触发语句
+RangeTrigger: 请修改
+# 存放群内通过指令添加的图片路径
+PicturePath4: 请修改
+# 图片缓存路径，默认不要修改
+LinuxSavePicture: 'data/sspPic/SavePicture.jpg'
+WindowsSavePicture: data\SSPpic\SavePicture.jpg
+# 0为不开启r18模式，1为只开启r18模式，2为混合模式
+r18: 0
 
 ```
 
