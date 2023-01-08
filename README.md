@@ -9,9 +9,11 @@
 第一次使用请先修改配置文件  
 初次运行会生成配置文件：config/com.alins.SimpleSendPhoto/config.yml
 ```
+# 图库路径
 PicturePath: （路径必须带上单引号）
   - 'C:\Users\90899\Desktop\pictest'    图库1
   - 'C:\Users\90899\Desktop\pictest'    图库2（如若需要更多图库以及触发词可以照此格式自行添加）
+# 触发词
 Trigger: 
   - 测试1                               触发词1
   - 测试2                               触发词2（如若需要更多图库以及触发词可以照此格式自行添加）
