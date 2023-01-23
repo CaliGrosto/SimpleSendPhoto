@@ -7,7 +7,7 @@
 
 
 第一次使用请先修改配置文件  
-初次运行会生成配置文件：config/com.alins.SimpleSendPhoto/config.yml
+初次运行会生成配置文件：config/com.alins.SimpleSendPhoto/config.yml以及Ascii2dConfig.yml
 ```
 # 图库路径
 PicturePath: （路径必须带上单引号）
@@ -31,10 +31,14 @@ r18: 0
 
 ```
 
+### 功能一
+（该功能不需要chat-command插件支持）<br><br>
+通过一图库对应一关键词的方式来进行简单的发图
 
-
-（该指令功能需要插件chat-command支持）
-[chat-command](https://github.com/project-mirai/chat-command)
+### 功能二
+（该指令功能需要chat-command插件支持）
+[chat-command](https://github.com/project-mirai/chat-command)<br><br>
+搜索图片来源以及根据关键词搜索网络图片
 
 | 指令        | 需要权限                                 | 效果                         |
 |-----------|:-------------------------------------|:---------------------------|
