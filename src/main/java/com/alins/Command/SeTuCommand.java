@@ -38,8 +38,10 @@ public final class SeTuCommand extends JSimpleCommand {
             String Urls = dataDTO.getUrls().getOriginal();
             String title = dataDTO.getTitle();
 
+            String linuxSavePicture = config.INSTANCE.getLinuxSavePicture();
+            String windowsSavePicture = config.INSTANCE.getWindowsSavePicture();
 
-            HttpsUtil.downloadFile(Urls);//下载图片
+            HttpsUtil.downloadFile(Urls,windowsSavePicture,linuxSavePicture);//下载图片
             //判断系统是Windows还是Linux
             String os = System.getProperty("os.name");
             char c = os.charAt(0);

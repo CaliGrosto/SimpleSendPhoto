@@ -14,7 +14,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class HttpsUtil {
-    public static void downloadFile(String URL) throws  Exception {
+    /**
+     *
+     * @param URL
+     * @param winSavePic:windows下缓存路径
+     * @param linuxSavePic:linux下缓存路径
+     * @throws Exception
+     */
+    public static void downloadFile(String URL,String winSavePic,String linuxSavePic) throws  Exception {
             URL url = new URL(URL);
             //打开连接
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -31,10 +38,11 @@ public class HttpsUtil {
             String t = String.valueOf(c);
             boolean w = t.equals("W");
             String savePicture;
+
             if (w){
-                savePicture = config.INSTANCE.getWindowsSavePicture();
+                savePicture = winSavePic;
             }else {
-                savePicture = config.INSTANCE.getLinuxSavePicture();
+                savePicture = linuxSavePic;
             }
 
             String substring = savePicture.substring(0,12);
@@ -101,6 +109,26 @@ public class HttpsUtil {
         String s = HttpsUtil.GetJson(KeyWord);
         SaveJson bean = new Gson().fromJson(s, SaveJson.class);
         return bean;
+    }
+
+    /**
+     * @Param url:需要查询的图片的url
+     * @return ResponseHttp
+     * @throws IOException
+     */
+    public String SearchMap2d(String url) throws IOException {
+        StringBuilder stringBuilder = new StringBuilder();
+        String ascii2dd = "https://ascii2d.net/search/url/";
+        StringBuilder append = stringBuilder.append(ascii2dd).append(url);
+        String ascii2d = String.valueOf(append);
+
+        CloseableHttpClient aDefault = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet(ascii2d);
+        httpGet.addHeader("User-Agent", "PostmanRuntime/7.29.0");
+        CloseableHttpResponse execute = aDefault.execute(httpGet);
+        String responseHttp = EntityUtils.toString(execute.getEntity());
+        return responseHttp;
+
     }
 }
 

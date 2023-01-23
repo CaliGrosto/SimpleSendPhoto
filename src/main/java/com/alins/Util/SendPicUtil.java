@@ -1,6 +1,7 @@
 package com.alins.Util;
 
 
+import net.mamoe.mirai.contact.Contact;
 import net.mamoe.mirai.event.events.MessageEvent;
 import net.mamoe.mirai.message.data.Image;
 import net.mamoe.mirai.utils.ExternalResource;
@@ -9,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.util.Random;
 
-public class RandomPicUtil {
+public class SendPicUtil {
     //随机获取文件夹内图片路径
     public static String getPhotoName(String PicturePath) {
 
@@ -42,14 +43,28 @@ public class RandomPicUtil {
     }
 
     /**
+     *
+     * @param path:图片路径
+     * @param event:传入MessageEvent
+     */
+    public static void SendPic(String path,@NotNull MessageEvent event){
+        Image image = ExternalResource.uploadAsImage(new File(path), event.getSubject());
+        event.getSubject().sendMessage(image);
+    }
+
+    public static Image getImageObject(String path, @NotNull Contact event){
+        Image image = ExternalResource.uploadAsImage(new File(path), event);
+        return image;
+    }
+
+    /**
      * @param path:图片路径
      * @param event:传入MessageEvent
      * @author Alin
      * date:
      */
-    public static void SendPic(String path, @NotNull MessageEvent event){
-        String filename = RandomPicUtil.getPhotoName(path);//取随机图片
-        Image image = ExternalResource.uploadAsImage(new File(filename), event.getSubject());//返回一个图片对象image
-        event.getSubject().sendMessage(image);//发送图片
+    public static void SendRandomPic(String path, @NotNull MessageEvent event){
+        String filename = SendPicUtil.getPhotoName(path);//取随机图片
+        SendPic(filename,event);
     }
 }

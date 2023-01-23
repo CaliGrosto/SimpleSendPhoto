@@ -6,9 +6,7 @@ import net.mamoe.mirai.event.SimpleListenerHost;
 import net.mamoe.mirai.event.events.MessageEvent;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  *
@@ -24,7 +22,7 @@ public class GroupEventListener extends SimpleListenerHost {
         int size = trigger.size();
         for (int t = 0; t < size; t++){
             if (content.contains(trigger.get(t))){
-                RandomPicUtil.SendPic(picturePath.get(t), event);
+                SendPicUtil.SendRandomPic(picturePath.get(t), event);
                 break;
             }
         }
