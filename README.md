@@ -33,12 +33,14 @@ r18: 0
 
 
 
-（该功能需要插件chat-command支持）
+（该指令功能需要插件chat-command支持）
 [chat-command](https://github.com/project-mirai/chat-command)
 
-  在群聊中发送   
-"来点 XX涩图"   
-就可以获得相应图片的标题作者和图片链接(通过loliconapi获取)
+| 指令        | 需要权限                                 | 效果                         |
+|-----------|:-------------------------------------|:---------------------------|
+| (/)来点 关键词 | com.alins.simplesendphoto:command.来点 | 从loliconapi中抽取一张含有对应关键词的图片 |
+ | (/)搜图 图片  | com.alins.simplesendphoto:command.搜图 | 通过Ascii2d搜索图片来源|
+
 默认是没有权限的（除bot主人外）
 下面附上Mirai权限管理相关指令：
 ```

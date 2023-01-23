@@ -61,9 +61,8 @@ public class SearchMapCommand extends JSimpleCommand {
         for (int j = 0 ; j < searchNumber;j++){
             WillSendPic.add(SendPicUtil.getImageObject(PicSaveArray.get(j),group));
         }
-
         /*
-
+           装有作者原图信息的ArrayList集合
          */
         ArrayList<String> authorInformation = new HttpHandleUtil(ToBeFoundPicUrl).SearchMapHandleAuthor();
 
