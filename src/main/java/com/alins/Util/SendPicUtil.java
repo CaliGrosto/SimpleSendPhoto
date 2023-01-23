@@ -14,7 +14,6 @@ public class SendPicUtil {
     //随机获取文件夹内图片路径
     public static String getPhotoName(String PicturePath) {
 
-        //String picturePath = config.INSTANCE.getPicturePath();//文件夹路径
 
         File file = new File(PicturePath);
         File[] array = file.listFiles();

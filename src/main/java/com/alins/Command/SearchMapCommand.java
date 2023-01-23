@@ -24,7 +24,8 @@ public class SearchMapCommand extends JSimpleCommand {
     }
     @Handler
     public void onCommand(CommandSender sender, Image image1) throws Exception {
-        final String ParentDirectory = Ascii2dConfig.INSTANCE.getParentDirectory();
+        final String WinParentDirectory = Ascii2dConfig.INSTANCE.getWinParentDirectory();
+        final String linuxParentDirectory = Ascii2dConfig.INSTANCE.getLinuxParentDirectory();
         final int searchNumber = Ascii2dConfig.INSTANCE.getSearchNumber();
 
         Contact group = sender.getSubject();
@@ -35,10 +36,23 @@ public class SearchMapCommand extends JSimpleCommand {
         /*
           图片保存路径
          */
+
+        //判断系统是Windows or Linux
+        String os = System.getProperty("os.name");
+        char c = os.charAt(0);
+        String t = String.valueOf(c);
+        boolean w = t.equals("W");
+        String savePicture;
+        if (w){
+            savePicture = WinParentDirectory;
+        }else {
+            savePicture = linuxParentDirectory;
+        }
+
         ArrayList<String> PicSaveArray = new ArrayList<>();
         for (int j = 0 ; j< searchNumber;j++){
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append(ParentDirectory)
+            stringBuilder.append(savePicture)
                     .append("pic")
                     .append(j)
                     .append(".jpg");
