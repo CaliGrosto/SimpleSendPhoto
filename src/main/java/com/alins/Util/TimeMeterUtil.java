@@ -4,7 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimeMeterUtil{
-    private int seconds;
+    private static int seconds;
 
     public int getSeconds(){
         return seconds;
