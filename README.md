@@ -28,7 +28,8 @@ LinuxSavePicture: 'data/sspPic/SavePicture.jpg'
 WindowsSavePicture: data\SSPpic\SavePicture.jpg
 # 0为不开启r18模式，1为只开启r18模式，2为混合模式
 r18: 0
-
+# 搜索图功能冷却时间，默认为30秒
+SearchCD: 30
 ```
 
 ### 功能一
