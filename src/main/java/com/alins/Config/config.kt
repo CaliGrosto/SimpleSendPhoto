@@ -20,4 +20,6 @@ object config : AutoSavePluginConfig("config"){
     var WindowsSavePicture : String by value("data\\SSPpic\\SavePicture.jpg")
     @ValueDescription("0为不开启r18模式，1为只开启r18模式，2为混合模式")
     var r18 :String by value("0")
+    @ValueDescription("搜索色图功能冷却时间，默认为30秒")
+    var SearchCD : Int by value(30)
 }

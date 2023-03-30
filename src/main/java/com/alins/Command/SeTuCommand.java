@@ -4,6 +4,7 @@ import com.alins.Config.config;
 import com.alins.SimpleSendPhoto;
 import com.alins.Util.HttpsUtil;
 import com.alins.JsonHandle.SaveJson;
+import com.alins.Util.TimeMeterUtil;
 import net.mamoe.mirai.console.command.CommandSender;
 import net.mamoe.mirai.console.command.java.JSimpleCommand;
 import net.mamoe.mirai.message.data.Image;
@@ -31,38 +32,48 @@ public final class SeTuCommand extends JSimpleCommand {
         //判断获取的json中有无图片相关数据
         if (saveJson.getData().size() == 0){
             sender.sendMessage("未查询到相关图片！");
-        }else{
-            SaveJson.DataDTO dataDTO = saveJson.getData().get(0);
+        }else {
 
-            String author = dataDTO.getAuthor();
-            String Urls = dataDTO.getUrls().getOriginal();
-            String title = dataDTO.getTitle();
+            TimeMeterUtil timeMeterUtil = new TimeMeterUtil();
+            timeMeterUtil.startTimeMeter(config.INSTANCE.getSearchCD());
+            //判断该功能是否处于冷却期
 
-            String linuxSavePicture = config.INSTANCE.getLinuxSavePicture();
-            String windowsSavePicture = config.INSTANCE.getWindowsSavePicture();
+            if (timeMeterUtil.getSeconds() == 0) {
+                SaveJson.DataDTO dataDTO = saveJson.getData().get(0);
 
-            HttpsUtil.downloadFile(Urls,windowsSavePicture,linuxSavePicture);//下载图片
-            //判断系统是Windows还是Linux
-            String os = System.getProperty("os.name");
-            char c = os.charAt(0);
-            String t = String.valueOf(c);
-            boolean w = t.equals("W");
-            String savePicture;
-            if (w){
-                savePicture = config.INSTANCE.getWindowsSavePicture();
-            }else {
-                savePicture = config.INSTANCE.getLinuxSavePicture();
+                String author = dataDTO.getAuthor();
+                String Urls = dataDTO.getUrls().getOriginal();
+                String title = dataDTO.getTitle();
+
+                String linuxSavePicture = config.INSTANCE.getLinuxSavePicture();
+                String windowsSavePicture = config.INSTANCE.getWindowsSavePicture();
+
+                HttpsUtil.downloadFile(Urls, windowsSavePicture, linuxSavePicture);//下载图片
+
+                //判断系统是Windows还是Linux
+                String os = System.getProperty("os.name");
+                char c = os.charAt(0);
+                String t = String.valueOf(c);
+                boolean w = t.equals("W");
+                String savePicture;
+                if (w) {
+                    savePicture = config.INSTANCE.getWindowsSavePicture();
+                } else {
+                    savePicture = config.INSTANCE.getLinuxSavePicture();
+                }
+
+                Image image = ExternalResource.uploadAsImage(new File(savePicture), sender.getSubject());//返回一个图片对象image
+
+                MessageChain singleMessages = new MessageChainBuilder()
+                        .append("标题：" + title + "\n")
+                        .append("作者：" + author + "\n")
+                        .append("图片链接：" + Urls)
+                        .append(image)
+                        .build();
+                sender.sendMessage(singleMessages);
+            }else{
+                sender.sendMessage("该功能冷却中,剩余时间"+(config.INSTANCE.getSearchCD()-timeMeterUtil.getSeconds()));
             }
-            Image image = ExternalResource.uploadAsImage(new File(savePicture), sender.getSubject());//返回一个图片对象image
-
-            MessageChain singleMessages = new MessageChainBuilder()
-                    //.append(image + "\n")
-                    .append("标题："+title+"\n")
-                    .append("作者："+author+"\n")
-                    .append("图片链接："+Urls)
-                    .append(image)
-                    .build();
-            sender.sendMessage(singleMessages);
         }
     }
 }
