@@ -30,6 +30,8 @@ WindowsSavePicture: data\SSPpic\SavePicture.jpg
 r18: 0
 # 搜索图功能冷却时间，默认为30秒
 SearchCD: 30
+# （开启后在同一图库一轮下来读的文件不重复，第一轮读完之后再重新开始第二轮（简单的说就是用过的图片不再出现）），默认关闭
+NoPutBackSampling: true
 ```
 
 ### 功能一
