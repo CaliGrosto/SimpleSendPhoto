@@ -1,7 +1,7 @@
 package com.alins.Command;
 
 import com.alins.SimpleSendPhoto;
-import com.alins.Util.savePictures;
+import com.alins.Util.HttpUtils.savePictures;
 import net.mamoe.mirai.console.command.CommandSender;
 import net.mamoe.mirai.console.command.java.JSimpleCommand;
 import net.mamoe.mirai.message.data.Image;

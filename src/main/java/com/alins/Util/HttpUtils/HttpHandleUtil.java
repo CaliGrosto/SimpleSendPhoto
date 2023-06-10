@@ -1,4 +1,4 @@
-package com.alins.Util;
+package com.alins.Util.HttpUtils;
 
 import com.alins.Config.Ascii2dConfig;
 import org.jsoup.Jsoup;
@@ -7,7 +7,6 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * @author Alin

@@ -1,4 +1,4 @@
-package com.alins.Util;
+package com.alins.Util.HttpUtils;
 
 import com.alins.Config.config;
 import com.alins.pojo.SaveJson;

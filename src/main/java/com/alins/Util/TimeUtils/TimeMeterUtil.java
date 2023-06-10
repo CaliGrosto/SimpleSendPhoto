@@ -1,4 +1,4 @@
-package com.alins.Util;
+package com.alins.Util.TimeUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;

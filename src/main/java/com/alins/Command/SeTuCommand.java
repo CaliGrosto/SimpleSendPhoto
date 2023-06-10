@@ -2,9 +2,9 @@ package com.alins.Command;
 
 import com.alins.Config.config;
 import com.alins.SimpleSendPhoto;
-import com.alins.Util.HttpsUtil;
+import com.alins.Util.HttpUtils.HttpsUtil;
 import com.alins.pojo.SaveJson;
-import com.alins.Util.TimeMeterUtil;
+import com.alins.Util.TimeUtils.TimeMeterUtil;
 import net.mamoe.mirai.console.command.CommandSender;
 import net.mamoe.mirai.console.command.java.JSimpleCommand;
 import net.mamoe.mirai.message.data.Image;

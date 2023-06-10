@@ -2,8 +2,8 @@ package com.alins.Command;
 
 import com.alins.Config.Ascii2dConfig;
 import com.alins.SimpleSendPhoto;
-import com.alins.Util.HttpHandleUtil;
-import com.alins.Util.HttpsUtil;
+import com.alins.Util.HttpUtils.HttpHandleUtil;
+import com.alins.Util.HttpUtils.HttpsUtil;
 import com.alins.Util.SendPicUtil;
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.console.command.CommandSender;

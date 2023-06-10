@@ -26,4 +26,6 @@ object config : AutoSavePluginConfig("config"){
     var selfPicCD : Int by value(10);
     @ValueDescription("冷却期提示语句")
     var cdPointOut : String by value("太快啦┻┳|･ω･)")
+    @ValueDescription("无放回采样（开启后在同一图库一轮下来读的文件不重复，第一轮读完之后再重新开始第二轮（简单的说就是用过的图片不再出现）），默认关闭")
+    var NoPutBackSampling : Boolean by value(false)
 }
