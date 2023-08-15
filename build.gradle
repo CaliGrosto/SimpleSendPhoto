@@ -1,13 +1,9 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '1.7.10'
+    id 'org.jetbrains.kotlin.jvm' version '1.8.10'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.8.10'
 
-    id 'net.mamoe.mirai-console' version '2.13.2'
+    id 'net.mamoe.mirai-console' version '2.15.0'
 }
-
-group = 'com.example'
-version = '1.0'
-
 repositories {
     maven { url 'https://maven.aliyun.com/repository/public' }
     mavenCentral()
@@ -18,7 +14,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     implementation 'org.apache.httpcomponents:httpclient:4.5.13'
     implementation 'com.google.code.gson:gson:2.9.0'
-    // https://mvnrepository.com/artifact/org.jsoup/jsoup
     implementation group: 'org.jsoup', name: 'jsoup', version: '1.15.3'
-
 }
+
