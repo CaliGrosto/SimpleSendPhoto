@@ -11,16 +11,8 @@ public class SaveJson {
         return error;
     }
 
-    public void setError(String error) {
-        this.error = error;
-    }
-
     public List<DataDTO> getData() {
         return data;
-    }
-
-    public void setData(List<DataDTO> data) {
-        this.data = data;
     }
 
     public static class DataDTO {
