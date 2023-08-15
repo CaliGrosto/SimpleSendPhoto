@@ -15,7 +15,7 @@ public class savePictures {
         URL url = new URL(ImageURL);
         //打开连接
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestProperty("referer",""); //这是破解防盗链添加的参数
+        conn.setRequestProperty("referer","");
         conn.addRequestProperty("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67");
         conn.setRequestMethod("GET");
         conn.setConnectTimeout(10 * 1000);
