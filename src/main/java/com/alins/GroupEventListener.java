@@ -30,32 +30,63 @@ public class GroupEventListener extends SimpleListenerHost {
 
         int size = trigger.size();
         for (int t = 0; t < size; t++){
-            if (content.contains(trigger.get(t))){
-                //启动计时器
-                if(timeMeterUtil.getLocalPicSecond() == 0){
-                    if (NoPutBackSampling){
-                        if (number == -1){
-                            //数组重置
-                            ints = SendPicUtil.GetRandomArray(picturePath.get(t));
-                            number = 0;
+            if (config.INSTANCE.getFuzzyMatching()){
+                if (content.equals(trigger.get(t))){
+                    //启动计时器
+                    if(timeMeterUtil.getLocalPicSecond() == 0){
+                        if (NoPutBackSampling){
+                            if (number == -1){
+                                //数组重置
+                                ints = SendPicUtil.GetRandomArray(picturePath.get(t));
+                                number = 0;
+                            }
+
+                            SendPicUtil.SendNoPutBackPic(ints,number,picturePath.get(t),event);
+                            number++;
+
+                            if (number > SendPicUtil.getFilePathLength(picturePath.get(t))-1){
+                                number = -1;
+                            }
+                        }else{
+                            SendPicUtil.SendRandomPic(picturePath.get(t), event);
                         }
 
-                        SendPicUtil.SendNoPutBackPic(ints,number,picturePath.get(t),event);
-                        number++;
+                        timeMeterUtil.LocalSecond(config.INSTANCE.getSelfPicCD());
 
-                        if (number > SendPicUtil.getFilePathLength(picturePath.get(t))-1){
-                            number = -1;
-                        }
+                        break;
+
                     }else{
-                        SendPicUtil.SendRandomPic(picturePath.get(t), event);
+                        event.getSubject().sendMessage(config.INSTANCE.getCdPointOut());
                     }
+                }
+            }else{
+                if (content.contains(trigger.get(t))){
+                    //启动计时器
+                    if(timeMeterUtil.getLocalPicSecond() == 0){
+                        if (NoPutBackSampling){
+                            if (number == -1){
+                                //数组重置
+                                ints = SendPicUtil.GetRandomArray(picturePath.get(t));
+                                number = 0;
+                            }
 
-                    timeMeterUtil.LocalSecond(config.INSTANCE.getSelfPicCD());
+                            SendPicUtil.SendNoPutBackPic(ints,number,picturePath.get(t),event);
+                            number++;
 
-                    break;
+                            if (number > SendPicUtil.getFilePathLength(picturePath.get(t))-1){
+                                number = -1;
+                            }
+                        }else{
+                            SendPicUtil.SendRandomPic(picturePath.get(t), event);
+                        }
 
-                }else{
-                    event.getSubject().sendMessage(config.INSTANCE.getCdPointOut());
+                        timeMeterUtil.LocalSecond(config.INSTANCE.getSelfPicCD());
+
+                        break;
+
+                    }else{
+                        event.getSubject().sendMessage(config.INSTANCE.getCdPointOut());
+                    }
                 }
             }
         }
