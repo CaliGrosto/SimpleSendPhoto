@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 /**
- *
  * @author Alin
  */
 public class GroupEventListener extends SimpleListenerHost {
