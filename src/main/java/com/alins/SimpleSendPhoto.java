@@ -32,7 +32,6 @@ public final class SimpleSendPhoto extends JavaPlugin {
 
         //群事件监听
         GlobalEventChannel.INSTANCE.registerListenerHost(new GroupEventListener());
-        getLogger().info("群消息监听已启动");
 
         getLogger().info("SimpleSendPhotos插件加载完毕！");
     }
