@@ -13,7 +13,6 @@ import java.util.List;
 /**
  *
  * @author Alin
- * date:
  */
 public class GroupEventListener extends SimpleListenerHost {
     int number = -1;//目前无放回所取到的数组元素是第number个
